@@ -2,7 +2,7 @@
 header('Content-type: application/json');
 $servername = "localhost";
 $username = "root";
-$password = "linda";
+$password = "123456";
 $dbname = "scf";
 
 // Create connection
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 
 $errors         = array();  	// array to hold validation errors
-$data 			= array(); 		// array to pass back data
+$data 		= array(); 		// array to pass back data
 
 $sql = "INSERT INTO scf.scf_prospecto (nombre, telefono, correo)
 		VALUES ('$_POST[name]', '$_POST[phone_number]', '$_POST[email]')";
@@ -26,7 +26,7 @@ if ($conn->query($sql) === TRUE) {
 	
 } else {
     $data['status'] = 'error';
-    $data['message'] = 'INcorrecto';
+    $data['message'] = 'Incorrecto';
 	
 }
 
